@@ -1,0 +1,186 @@
+:root {
+  --start-button-color: #00186e;
+  --navbar-background-color: rgba(255, 255, 255, 0.78);
+  --special-navbar-background-color: rgb(0, 24, 110, 0.9);
+  --navbar-text-color: #00186e;
+  --heading1-color: #00186e;
+  --heading2-color: #00186e;
+  --start-button-text-color: #ffffff;
+  --input-border-color: #00186e;
+  --input-border-focus: #00186e;
+  --input-text-color: #00186e;
+  --language-hover-color: #d0d0d0;
+
+  --language-selector-color: #fff;
+
+  --theme-toggle-light-bg: #73c2fb;
+  --theme-toggle-dark-bg: #626262;
+
+  --navbar-bg: #ebebeb;
+  --footer-hover: #73c2fb;
+  --clear-selection: #0b3059;
+  --clear-hover: #00186e;
+  --tooltip-bg: #00186e;
+
+  --footer-background-image: url("/footer-light.svg");
+
+  background-image: url("/background-light.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  --vt-c-white: #ffffff;
+  --vt-c-white-soft: #f8f8f8;
+  --vt-c-white-mute: #f2f2f2;
+
+  --vt-c-black: #181818;
+  --vt-c-black-soft: #222222;
+  --vt-c-black-mute: #282828;
+
+  --vt-c-indigo: #2c3e50;
+
+  --vt-c-divider-light-1: rgba(60, 60, 60, 0.29);
+  --vt-c-divider-light-2: rgba(60, 60, 60, 0.12);
+  --vt-c-divider-dark-1: rgba(84, 84, 84, 0.65);
+  --vt-c-divider-dark-2: rgba(84, 84, 84, 0.48);
+
+  --vt-c-text-light-1: var(--vt-c-indigo);
+  --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
+  --vt-c-text-dark-1: var(--vt-c-white);
+  --vt-c-text-dark-2: rgb(232, 232, 231);
+}
+
+body.dark {
+  --footer-background-image: url("/footer-dark.svg");
+  --navbar-background-color: rgb(0, 24, 110, 0.9);
+  --special-navbar-background-color: rgb(255, 255, 255, 0.9);
+  --navbar-text-color: #ffffff;
+  --heading1-color: #ffffff;
+  --heading2-color: #ffffff;
+  --start-button-color: #fff;
+  --start-button-text-color: #00186e;
+  --input-border-color: #fff;
+  --input-border-focus: #fff;
+  --input-text-color: #fff;
+
+  --language-selector-color: #00186e;
+
+  --navbar-bg: #809cd9;
+  --footer-hover: #ebebeb;
+  --skillsidebar-bg: #89cff0;
+  --clear-selection: #89cff0;
+  --clear-hover: #89cff0;
+  --tooltip-bg: #fff;
+  --language-hover-color: #0033cc;
+
+  background-image: url("/background-dark.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  --color-background: var(--jamk-background);
+  --color-background-soft: var(--vt-c-black-soft);
+  --color-background-mute: var(--vt-c-black-mute);
+  --color-border: var(--vt-c-divider-dark-2);
+  --color-border-hover: var(--vt-c-divider-dark-1);
+  --color-heading: var(--vt-c-text-dark-1);
+  --color-text: var(--vt-c-text-dark-2);
+}
+
+body:not(.dark) {
+  --footer-background-image: url("/footer-light.svg");
+
+  background-image: url("/background-light.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-text);
+    --color-background-soft: var(--color-text-soft);
+    --color-background-mute: var(--color-text-mute);
+    --color-border: var(--color-divider-dark-2);
+    --color-border-hover: var(--color-divider-dark-1);
+    --color-heading: var(--color-background);
+    --color-text: var(--color-background);
+    --footer-background-image: var(--dark-footer-image);
+    background-image: var(--dark-background-image);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+  font-weight: normal;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--color-text);
+  background: var(--color-background);
+  background-attachment: fixed;
+  transition: color 0.5s, background-color 0.5s;
+  line-height: 1.6;
+  font-family: Calibri, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#doorbell-button {
+  color: var(--start-button-text-color);
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: rotate(-90deg) translate(0, -50%);
+  transform-origin: top right;
+  visibility: visible !important;
+  cursor: pointer;
+  width: 150px;
+  height: 35px;
+  padding: 5px;
+  border: 0;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  background: var(--start-button-color);
+  margin: 0 20px 0 10px;
+  z-index: 100;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#doorbell-button:hover {
+  transform: scale(1.05) rotate(-90deg) translate(0, -60%); /* Adjusted the movement towards left (up) */
+}
+
+.my-confirm-button-class {
+  color: #00186e !important;
+}
+
+.white-text {
+  color: white !important;
+}
+
+.btn-light {
+  background-color: #0fe45d !important;
+  color: #00186e !important;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.swal2-popup {
+  font-size: 1rem !important;
+  width: 600px !important;
+  padding: 3em !important;
+  font-family: "Montserrat", sans-serif !important;
+}

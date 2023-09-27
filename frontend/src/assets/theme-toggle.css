@@ -1,0 +1,65 @@
+/* theme-toggle.css */
+.theme-toggle {
+  width: 50px;
+  height: 24px;
+  position: relative;
+  background-color: #73c2fb;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 3px;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+}
+
+.theme-toggle .toggle-ball {
+  width: 22px;
+  height: 22px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle .toggle-ball.active {
+  transform: translateX(24px);
+}
+
+.theme-toggle .toggle-ball .icon-dark,
+.theme-toggle .toggle-ball .icon-light {
+  font-size: 14px; /* Reduce the size of the icon */
+}
+
+.icon-dark {
+  color: #ffffff;
+}
+
+.icon-light {
+  color: #73c2fb;
+}
+
+.theme-toggle .toggle-ball .icon-light {
+  color: #73c2fb;
+}
+
+.theme-toggle .toggle-ball {
+  background: #ffffff;
+}
+
+body.dark .theme-toggle {
+  background-color: #626262;
+}
+
+body.dark .theme-toggle .toggle-ball {
+  background: #333333;
+}
+
+body.dark .theme-toggle .toggle-ball .icon-dark {
+  color: #ffffff;
+}

@@ -1,0 +1,39 @@
+# docker-compose-backend.yml
+version: '3'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    restart: always
+    networks:
+      - app-network
+    ports:
+      - '5432:5432'
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ../skill-collector-1-0-backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      POSTGRES_PASSWORD: skillcollector
+
+  backend:
+    build:
+      context: ../skill-collector-1-0-backend
+      dockerfile: Dockerfile
+    container_name: backend
+    restart: always
+    networks:
+      - app-network
+    ports:
+      - '3000:3000'
+      - '443:443'
+    depends_on:
+      - postgres
+    env_file:
+      - ../skill-collector-1-0-backend/.env
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:

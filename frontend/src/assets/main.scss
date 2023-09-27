@@ -1,0 +1,61 @@
+@use "sass:math";
+@use "base";
+
+#app {
+  font-weight: normal;
+  font-size: 1.25rem;
+
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
+}
+
+a {
+  color: white;
+  transition: 0.4s;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 5px 0 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  align-items: center;
+
+
+  @media (max-width: 900px) {
+    padding: 0 10px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 5px;
+  }
+}
+
+.container p,
+.container h2,
+.container ul {
+  text-align: center;
+
+  @media (max-width: 600px) {
+    font-size: 0.875rem;
+  }
+}
+
+html {
+  overflow-x: hidden;
+}
+
+#app {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
