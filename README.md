@@ -226,6 +226,9 @@ To login, follow the same steps, but replace the Uri with the login endpoint (e.
 
 ## Screenshots
 
+Dark Mode
+![darkmode](./images/dark.jpg)
+
 Instuctions Page
 ![instuctions](./images/instructions1.jpg)
 
