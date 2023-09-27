@@ -21,6 +21,7 @@ Skill Collector is crafted using popular technologies such as Node.js, Express, 
 - [User Management](#user-management)
 - [API Documentation](#api-documentation)
 - [Power Automate](#power-automate)
+- [Screenshots](#screenshots)
 - [Testing](#testing-for-skill-collector)
 - [WIMMA Lab](#wimma-lab)
 
@@ -51,8 +52,6 @@ docker-compose up -d
 
 Upon running the Docker Compose, a default hash 0123456789 is created in the database. You can use this hash to test the service. The frontend of the service will be running on your local machine and can be accessed by navigating to http://localhost:5173.
 
-![instuctions](./images/instructions1.jpg)
-
 ## Database
 
 ### Database Initialization
@@ -79,8 +78,6 @@ docker-compose up -d
 ```bash
 docker exec -it postgres psql -U skillcollector -d answerdb
 ```
-
-![summary](./images/summary.jpg)
 
 ### Add a New User
 
@@ -197,8 +194,6 @@ Please replace http://localhost:3000 with the actual server URL if the applicati
 
 ![flow](./images/flow-1.png)
 
-![email](./images/flow-email.png)
-
 ### Register a User and Login
 
 1. Open Power Automate and click on "Create". Then choose "Instant flow".
@@ -228,6 +223,17 @@ To login, follow the same steps, but replace the Uri with the login endpoint (e.
    "Content-Type" as Key and "application/json" as Value.
    "Cookie" as Key and "YourJWTToken" as Value. Replace "YourJWTToken" with the cookie you received when you logged in.
 5. Save the flow and test it. If everything is set up correctly, you should receive a "200 OK" status with the list of all answers from the API.
+
+## Screenshots
+
+Instuctions Page
+![instuctions](./images/instructions1.jpg)
+
+Summary Page
+![summary](./images/summary.jpg)
+
+Power Automate Email
+![email](./images/flow-email.png)
 
 ## Testing for Skill Collector
 
