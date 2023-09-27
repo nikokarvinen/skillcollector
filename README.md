@@ -6,6 +6,8 @@ Created with universities and IT companies in mind, Skill Collector is a user-fr
 
 To accomplish its task, Skill Collector works with widely used programs like Excel and Power Automate. It sends out surveys, collects responses, and then leverages Power BI to present the data in an easy-to-understand format.
 
+![login](./images/login.jpg)
+
 ## Setting up the Application
 
 Skill Collector is crafted using popular technologies such as Node.js, Express, Vue.js, TypeScript, and PostgreSQL. This guide will assist you in setting up the application and will explain its functionalities in a simple way.
@@ -42,11 +44,14 @@ git clone https://github.com/nikokarvinen/skillcollector.git
 ### Navigate to docker folder and run Docker Compose to start the services.
 
 ```bash
+cd skillcollector
 cd skill-collector-1-0-docker
 docker-compose up -d
 ```
 
 Upon running the Docker Compose, a default hash 0123456789 is created in the database. You can use this hash to test the service. The frontend of the service will be running on your local machine and can be accessed by navigating to http://localhost:5173.
+
+![instuctions](./images/instructions1.jpg)
 
 ## Database
 
@@ -74,6 +79,8 @@ docker-compose up -d
 ```bash
 docker exec -it postgres psql -U skillcollector -d answerdb
 ```
+
+![summary](./images/summary.jpg)
 
 ### Add a New User
 
@@ -187,6 +194,10 @@ Please replace http://localhost:3000 with the actual server URL if the applicati
 ```
 
 ## Power Automate
+
+![flow](./images/flow-1.png)
+
+![email](./images/flow-email.png)
 
 ### Register a User and Login
 
